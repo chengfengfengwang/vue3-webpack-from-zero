@@ -12,7 +12,11 @@ module.exports = {
     port: 3000,
     hot: true
   },
-  plugins: [new HtmlWebpackPlugin()]
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'index.html') // 使用lodash.template
+    })
+  ]
 }
 // console.log(path.resolve(__dirname, 'index.js'))
 // console.log(path.join('/foo', 'bar', 'baz/asdf', 'quux', ''))
