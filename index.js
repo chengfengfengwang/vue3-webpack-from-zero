@@ -1,6 +1,6 @@
-// import ('./src/useSnabbdom.js')
 import './src/useSnabbdom.js'
 import { createApp } from 'vue'
-// import app from './src/app.vue'
+import router from '@/router/index.js'
+
 import app from '@/app.vue'
-createApp(app).mount('#app')
+createApp(app).use(router).mount('#app')

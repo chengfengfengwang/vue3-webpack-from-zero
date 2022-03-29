@@ -34,11 +34,14 @@ module.exports = (env) => {
     ],
     resolve: { // 配置模块是如何被解析的
       alias: {
-        vue: 'vue/dist/vue.esm-bundler.js', // 去哪里解析vue
-        '@': path.resolve(__dirname, 'src') // 定义@代表的意义 在import xx from '@/xx' 时使用
+        // vue: 'vue/dist/vue.esm-bundler.js', // 去哪里解析vue
+        '@': path.resolve(__dirname, 'src'), // 定义@代表的意义 在import xx from '@/xx' 时使用
+        'components': path.resolve(__dirname, 'src/components'),
+        'views': path.resolve(__dirname, 'src/views')
       },
     },
     optimization: {
+      // todo: 如何把常用的vue component单独抽离成一个文件，因为这个component可能被导入很多次
       splitChunks: {
         chunks: 'all',
       },
