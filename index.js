@@ -1,3 +1,7 @@
 // import ('./src/useSnabbdom.js')
 import './src/useSnabbdom.js'
-console.log('hello world')
+document.querySelector('#app').addEventListener('click', function() {
+  import('./src/math.js').then(({addTwo}) => {
+    console.log(addTwo(3))
+  })
+})
