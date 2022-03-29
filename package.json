@@ -20,12 +20,15 @@
   },
   "homepage": "https://github.com/chengfengfengwang/vue3-webpack-from-zero#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "webpack": "^5.70.0",
+    "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
-    "snabbdom": "^3.4.0"
+    "snabbdom": "^3.4.0",
+    "vue": "^3.2.31"
   }
 }
