@@ -11,7 +11,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="less">
   .blue {
     color: blueviolet;
   }
