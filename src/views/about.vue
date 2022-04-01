@@ -1,5 +1,5 @@
 <template>
-  <h1>about</h1>
+  <h1 class="blue">about</h1>
   <HelloWorld />
 </template>
 <script>
@@ -11,3 +11,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+  .blue {
+    color: blueviolet;
+  }
+</style>

@@ -21,7 +21,9 @@
   "homepage": "https://github.com/chengfengfengwang/vue3-webpack-from-zero#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
     "vue-loader": "^17.0.0",
     "webpack": "^5.70.0",
     "webpack-bundle-analyzer": "^4.5.0",
