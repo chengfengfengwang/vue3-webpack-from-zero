@@ -4,10 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (env) => {
   return {
-    mode: 'development',
+    mode: 'production',
     entry: path.resolve(__dirname, 'index.js'),
     output: {
       path: path.resolve(__dirname, 'dist')
@@ -21,11 +22,11 @@ module.exports = (env) => {
       rules: [
         {
           test: /\.css$/,
-          use: ['style-loader', 'css-loader']
+          use: [MiniCssExtractPlugin.loader, 'css-loader']
         },
         {
           test: /\.less$/,
-          use: ['style-loader', 'css-loader', 'less-loader']
+          use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
         },
         { test: /\.vue$/, loader: 'vue-loader' }
       ]
@@ -36,6 +37,7 @@ module.exports = (env) => {
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, 'index.html') // 使用lodash.template
       }),
+      new MiniCssExtractPlugin(),
       new BundleAnalyzerPlugin({
         analyzerMode: env.production ? 'server' : false
       })
