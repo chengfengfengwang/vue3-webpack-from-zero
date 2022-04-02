@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (env) => {
   return {
-    mode: 'production',
+    mode: 'development',
     entry: path.resolve(__dirname, 'index.js'),
     output: {
       path: path.resolve(__dirname, 'dist')
@@ -39,16 +39,17 @@ module.exports = (env) => {
       }),
       new MiniCssExtractPlugin(),
       new BundleAnalyzerPlugin({
-        analyzerMode: env.production ? 'server' : false
+        analyzerMode: env.analyze ? 'server' : false
       })
     ],
     resolve: { // 配置模块是如何被解析的
       alias: {
-        // vue: 'vue/dist/vue.esm-bundler.js', // 去哪里解析vue
+        vue: 'vue/dist/vue.esm-bundler.js', // 去哪里解析vue
         '@': path.resolve(__dirname, 'src'), // 定义@代表的意义 在import xx from '@/xx' 时使用
         'assets': path.resolve(__dirname, 'src/assets'),
         'components': path.resolve(__dirname, 'src/components'),
-        'views': path.resolve(__dirname, 'src/views')
+        'views': path.resolve(__dirname, 'src/views'),
+        '@utils': path.resolve(__dirname, 'src/utils')
       },
     },
     optimization: {
