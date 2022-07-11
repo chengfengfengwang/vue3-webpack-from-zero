@@ -28,7 +28,14 @@ module.exports = (env) => {
           test: /\.less$/,
           use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
         },
-        { test: /\.vue$/, loader: 'vue-loader' }
+        { test: /\.vue$/, loader: 'vue-loader' },
+        {
+          test: /\.tsx?$/,
+          loader: 'ts-loader',
+          options: {
+            appendTsSuffixTo: [/\.vue$/]
+          }
+        }
       ]
     },
     plugins: [
@@ -43,6 +50,7 @@ module.exports = (env) => {
       })
     ],
     resolve: { // 配置模块是如何被解析的
+      extensions: ['.ts', '...'],// which is what enables users to leave off the extension when importing:
       alias: {
         vue: 'vue/dist/vue.esm-bundler.js', // 去哪里解析vue
         '@': path.resolve(__dirname, 'src'), // 定义@代表的意义 在import xx from '@/xx' 时使用
