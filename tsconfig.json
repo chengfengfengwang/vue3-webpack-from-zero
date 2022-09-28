@@ -3,7 +3,9 @@
     "target": "es6",
     "module": "ESNext",
     "jsx": "preserve",
-    "allowJs": true
+    "allowJs": true,
+    "moduleResolution": "node",
+    // "baseUrl": "."
   },
   "include": [
     "src/**/*.ts",

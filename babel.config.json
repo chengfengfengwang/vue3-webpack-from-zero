@@ -1,0 +1,18 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env"
+    ],
+    [
+      "@vue/babel-preset-jsx",
+      {
+        "compositionAPI": true
+      }
+    ]
+  ]
+}
+
+// "@babel/core": "^7.18.13",
+//     "@babel/preset-env": "^7.18.10",
+//     "@vue/babel-helper-vue-jsx-merge-props": "^1.4.0",
+//     "@vue/babel-preset-jsx": "^1.4.0",
